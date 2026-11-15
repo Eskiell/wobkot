@@ -4,11 +4,21 @@ Updated userland to use newer JSC bugs.
 
 # How to use
 
-- place payloads based on console:
-  - for ps5: `elfldr.elf` and `kexp.bin` in `ps5` folder.
-  - for ps4: `payload.bin` in `ps4` folder.
+- PS5: `src/ps5/kexp.bin` and `src/ps5/elfldr.elf` are included.
+- PS4: place a compatible `payload.bin` in `src/ps4/`.
 - `py host.py`
 - open browser and type `https://{ip}`
+
+# Bundled PS5 payloads
+
+The following files are unmodified copies from [Eskiell/Relapse-Exploit at `ccbf049`](https://github.com/Eskiell/Relapse-Exploit/tree/ccbf0492ff255f5c7a53b037f46fbe868dbc614b/payloads):
+
+| Bundled path | Source filename | Size |
+| --- | --- | --- |
+| `src/ps5/kexp.bin` | `kexp_2026_05_25.bin` | 18,912 bytes |
+| `src/ps5/elfldr.elf` | `elfldr-ps5-1360.elf` | 397,024 bytes |
+
+PS5 compatibility with Wobkot has not been validated. Relapse patches the imported `kexp` in memory before execution; Wobkot currently executes it without that patching step.
 
 # References
 
